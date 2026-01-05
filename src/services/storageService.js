@@ -30,8 +30,8 @@ export async function setSetting(key, value, encrypted = false) {
     throw new Error('Setting key must be a non-empty string');
   }
   
-  // Validate API key format
-  if (key === 'apiKey' && typeof value === 'string' && !value.startsWith('sk-')) {
+  // Validate API key format (only for non-encrypted values)
+  if (key === 'apiKey' && !encrypted && typeof value === 'string' && !value.startsWith('sk-')) {
     throw new Error('API key must start with "sk-"');
   }
   
@@ -380,6 +380,15 @@ export async function decryptApiKey(encryptedData, salt) {
  * @param {string} apiKey - Plain text API key
  */
 export async function saveEncryptedApiKey(apiKey) {
+  // Validate before encryption
+  if (!apiKey || typeof apiKey !== 'string') {
+    throw new Error('API key is required');
+  }
+  
+  if (!apiKey.startsWith('sk-')) {
+    throw new Error('API key must start with "sk-"');
+  }
+  
   const { encrypted, salt } = await encryptApiKey(apiKey);
   await setSetting('apiKey', encrypted, true);
   if (salt) {
