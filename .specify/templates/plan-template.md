@@ -31,7 +31,18 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+Use `.specify/memory/constitution.md` as the source of truth. Document pass/fail
+for each gate and list any exceptions in **Complexity Tracking**.
+
+Required gates (MealLens):
+- MVP slice is independently testable/deployable; upgrade path documented.
+- Design stays simple; any new abstraction/infrastructure is justified.
+- Security/privacy: data classification done; sensitive fields listed; secrets handling
+  defined; authz boundaries explicit.
+- Scalability: data model supports indexes/migrations; interfaces are versioned or
+  backward compatible; long-running work is async where needed.
+- Operability: structured logs for key events/errors; auditable security events;
+  rollback plan included.
 
 ## Project Structure
 
