@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAppContext } from '../../context/AppContext.jsx';
 import FoodItemCard from './FoodItemCard.jsx';
 import TotalCalories from './TotalCalories.jsx';
+import { saveMeal } from '../../services/storageService.js';
 
 /**
  * Detection Results Component
@@ -9,6 +11,9 @@ import TotalCalories from './TotalCalories.jsx';
  */
 function DetectionResults() {
   const { currentMeal, currentImage } = useAppContext();
+  const navigate = useNavigate();
+  const [saving, setSaving] = useState(false);
+  const [error, setError] = useState(null);
 
   if (!currentMeal || !currentMeal.foodItems) {
     return (
@@ -41,6 +46,55 @@ function DetectionResults() {
 
   // Check for poor image quality (all items low confidence)
   const allLowConfidence = foodItems.every(item => item.confidence === 'low');
+
+  const handleSave = async () => {
+    setSaving(true);
+    setError(null);
+
+    try {
+      // Calculate total calories
+      const totalCalories = foodItems.reduce((sum, item) => sum + item.calories, 0);
+
+      // Prepare meal data
+      const mealData = {
+        timestamp: currentMeal.timestamp || Date.now(),
+        date: currentMeal.date || new Date().toISOString().split('T')[0],
+        type: currentMeal.type || detectMealType(),
+        totalCalories
+      };
+
+      // Save meal with food items
+      await saveMeal(mealData, foodItems);
+
+      // Navigate to success or log page
+      alert('✅ Meal saved successfully!');
+      navigate('/');
+    } catch (err) {
+      console.error('Failed to save meal:', err);
+      setError(err.message);
+      setSaving(false); disabled={saving}>🔄 Retry</button>
+        </a>
+        <button 
+          style={styles.primaryButton} 
+          onClick={handleSave}
+          disabled={saving}
+        >
+          {saving ? '💾 Saving...' : '✓ Confirm & Save'}
+        </button>
+      </div>
+
+      {error && (
+        <div style={styles.errorMessage}>
+          ⚠️ Failed to save: {error}
+        </div>
+      )}
+  const detectMealType = () => {
+    const hour = new Date().getHours();
+    if (hour >= 5 && hour < 11) return 'Breakfast';
+    if (hour >= 11 && hour < 16) return 'Lunch';
+    if (hour >= 16 && hour < 21) return 'Dinner';
+    return 'Snack';
+  };
   
   return (
     <div style={styles.container}>
@@ -141,7 +195,16 @@ const styles = {
     color: 'white',
     border: 'none',
     borderRadius: '10px',
-    cursor: 'pointer',
+   ,
+  errorMessage: {
+    backgroundColor: '#f8d7da',
+    border: '1px solid #f5c6cb',
+    color: '#721c24',
+    padding: '12px',
+    borderRadius: '5px',
+    marginTop: '15px',
+    textAlign: 'center'
+  } cursor: 'pointer',
     fontWeight: 'bold'
   },
   retryButton: {
