@@ -72,22 +72,10 @@ function DetectionResults() {
     } catch (err) {
       console.error('Failed to save meal:', err);
       setError(err.message);
-      setSaving(false); disabled={saving}>🔄 Retry</button>
-        </a>
-        <button 
-          style={styles.primaryButton} 
-          onClick={handleSave}
-          disabled={saving}
-        >
-          {saving ? '💾 Saving...' : '✓ Confirm & Save'}
-        </button>
-      </div>
+      setSaving(false);
+    }
+  };
 
-      {error && (
-        <div style={styles.errorMessage}>
-          ⚠️ Failed to save: {error}
-        </div>
-      )}
   const detectMealType = () => {
     const hour = new Date().getHours();
     if (hour >= 5 && hour < 11) return 'Breakfast';
@@ -121,10 +109,24 @@ function DetectionResults() {
 
       <div style={styles.actions}>
         <a href="/camera" style={styles.link}>
-          <button style={styles.secondaryButton}>🔄 Retry</button>
+          <button style={styles.secondaryButton} disabled={saving}>
+            🔄 Retry
+          </button>
         </a>
-        <button style={styles.primaryButton}>✓ Confirm & Save</button>
+        <button 
+          style={styles.primaryButton} 
+          onClick={handleSave}
+          disabled={saving}
+        >
+          {saving ? '💾 Saving...' : '✓ Confirm & Save'}
+        </button>
       </div>
+
+      {error && (
+        <div style={styles.errorMessage}>
+          ⚠️ Failed to save: {error}
+        </div>
+      )}
     </div>
   );
 }
@@ -195,7 +197,7 @@ const styles = {
     color: 'white',
     border: 'none',
     borderRadius: '10px',
-   ,
+  },
   errorMessage: {
     backgroundColor: '#f8d7da',
     border: '1px solid #f5c6cb',
@@ -203,8 +205,8 @@ const styles = {
     padding: '12px',
     borderRadius: '5px',
     marginTop: '15px',
-    textAlign: 'center'
-  } cursor: 'pointer',
+    textAlign: 'center',
+    cursor: 'pointer',
     fontWeight: 'bold'
   },
   retryButton: {
