@@ -3,6 +3,8 @@
 Auto-generated from all feature plans. Last updated: 2026-01-05
 
 ## Active Technologies
+- JavaScript (ES6+) / React 18.2.0 + React, Vite, IndexedDB (Dexie), Service Worker (PWA) (002-version-check)
+- IndexedDB for notification state (last dismissed timestamp, version), localStorage as fallback (002-version-check)
 
 - JavaScript/TypeScript (ES2020+), React 18+ + React, Vite (build tool), Workbox (service worker), OpenAI SDK, Dexie.js (IndexedDB wrapper) (001-calorie-tracker)
 
@@ -23,6 +25,7 @@ npm test; npm run lint
 JavaScript/TypeScript (ES2020+), React 18+: Follow standard conventions
 
 ## Recent Changes
+- 002-version-check: Added JavaScript (ES6+) / React 18.2.0 + React, Vite, IndexedDB (Dexie), Service Worker (PWA)
 
 - 001-calorie-tracker: Added JavaScript/TypeScript (ES2020+), React 18+ + React, Vite (build tool), Workbox (service worker), OpenAI SDK, Dexie.js (IndexedDB wrapper)
 
