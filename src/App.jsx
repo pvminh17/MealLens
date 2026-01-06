@@ -6,8 +6,9 @@ import OfflineBanner from './components/OfflineBanner.jsx';
 import PhotoFlow from './components/camera/PhotoFlow.jsx';
 import DetectionResults from './components/results/DetectionResults.jsx';
 import Settings from './components/settings/Settings.jsx';
+import MealLogList from './components/log/MealLogList.jsx';
 
-// Placeholder components (to be implemented in later phases)
+// Home page component
 const HomePage = () => (
   <div style={{ padding: '20px', textAlign: 'center', marginTop: '100px' }}>
     <h1 style={{ color: '#4CAF50', fontSize: '48px' }}>MealLens</h1>
@@ -15,7 +16,12 @@ const HomePage = () => (
     <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
       <a href="/camera" style={{ textDecoration: 'none' }}>
         <button style={{ padding: '15px 40px', fontSize: '18px', backgroundColor: '#4CAF50', color: 'white', border: 'none', borderRadius: '50px', cursor: 'pointer', fontWeight: 'bold' }}>
-          📸 Get Started
+          📸 Take Photo
+        </button>
+      </a>
+      <a href="/log" style={{ textDecoration: 'none' }}>
+        <button style={{ padding: '15px 40px', fontSize: '18px', backgroundColor: '#FF9800', color: 'white', border: 'none', borderRadius: '50px', cursor: 'pointer', fontWeight: 'bold' }}>
+          📋 View Log
         </button>
       </a>
       <a href="/settings" style={{ textDecoration: 'none' }}>
@@ -26,7 +32,6 @@ const HomePage = () => (
     </div>
   </div>
 );
-const LogPage = () => <div style={{ padding: '20px' }}><h1>Meal Log</h1><p>Log feature coming soon...</p></div>;
 
 /**
  * Main App Component
@@ -42,7 +47,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/camera" element={<PhotoFlow />} />
             <Route path="/results" element={<DetectionResults />} />
-            <Route path="/log" element={<LogPage />} />
+            <Route path="/log" element={<MealLogList />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>

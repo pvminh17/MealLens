@@ -3,17 +3,26 @@ import { useNavigate } from 'react-router-dom';
 import { useAppContext } from '../../context/AppContext.jsx';
 import FoodItemCard from './FoodItemCard.jsx';
 import TotalCalories from './TotalCalories.jsx';
+import FoodItemEditor from '../editor/FoodItemEditor.jsx';
+import RemoveItemButton from '../editor/RemoveItemButton.jsx';
+import MealTypePicker from '../log/MealTypePicker.jsx';
 import { saveMeal } from '../../services/storageService.js';
+import { detectMealType } from '../../utils/mealTypeDetector.js';
 
 /**
  * Detection Results Component
  * Displays AI-detected food items with calories and confidence
+ * Supports editing and removing items
  */
 function DetectionResults() {
   const { currentMeal, currentImage } = useAppContext();
   const navigate = useNavigate();
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState(null);
+  const [foodItems, setFoodItems] = useState(currentMeal?.foodItems || []);
+  const [editingIndex, setEditingIndex] = useState(null);
+  const [mealType, setMealType] = useState(detectMealType());
+  const [showMealTypePicker, setShowMealTypePicker] = useState(false);
 
   if (!currentMeal || !currentMeal.foodItems) {
     return (
@@ -26,15 +35,13 @@ function DetectionResults() {
     );
   }
 
-  const { foodItems } = currentMeal;
-
-  // Handle edge case: no food detected
+  // Handle edge case: no food detected or all items removed
   if (foodItems.length === 0) {
     return (
       <div style={styles.container}>
         <div style={styles.emptyState}>
-          <h2>No food detected</h2>
-          <p>The AI couldn't identify any food in this photo.</p>
+          <h2>No food items</h2>
+          <p>The AI couldn't identify any food in this photo, or all items were removed.</p>
           <p>Try taking another photo with better lighting or a clearer view of the food.</p>
           <a href="/camera" style={styles.link}>
             <button style={styles.retryButton}>📸 Try Again</button>
@@ -47,7 +54,33 @@ function DetectionResults() {
   // Check for poor image quality (all items low confidence)
   const allLowConfidence = foodItems.every(item => item.confidence === 'low');
 
+  const handleEditItem = (index) => {
+    setEditingIndex(index);
+  };
+
+  const handleSaveEdit = (updatedItem) => {
+    const newItems = [...foodItems];
+    newItems[editingIndex] = updatedItem;
+    setFoodItems(newItems);
+    setEditingIndex(null);
+  };
+
+  const handleCancelEdit = () => {
+    setEditingIndex(null);
+  };
+
+  const handleRemoveItem = (index) => {
+    const newItems = foodItems.filter((_, i) => i !== index);
+    setFoodItems(newItems);
+  };
+
   const handleSave = async () => {
+    if (!showMealTypePicker) {
+      // Show meal type picker first
+      setShowMealTypePicker(true);
+      return;
+    }
+
     setSaving(true);
     setError(null);
 
@@ -59,29 +92,20 @@ function DetectionResults() {
       const mealData = {
         timestamp: currentMeal.timestamp || Date.now(),
         date: currentMeal.date || new Date().toISOString().split('T')[0],
-        type: currentMeal.type || detectMealType(),
+        type: mealType,
         totalCalories
       };
 
       // Save meal with food items
       await saveMeal(mealData, foodItems);
 
-      // Navigate to success or log page
-      alert('✅ Meal saved successfully!');
-      navigate('/');
+      // Navigate to log page
+      navigate('/log');
     } catch (err) {
       console.error('Failed to save meal:', err);
       setError(err.message);
       setSaving(false);
     }
-  };
-
-  const detectMealType = () => {
-    const hour = new Date().getHours();
-    if (hour >= 5 && hour < 11) return 'Breakfast';
-    if (hour >= 11 && hour < 16) return 'Lunch';
-    if (hour >= 16 && hour < 21) return 'Dinner';
-    return 'Snack';
   };
   
   return (
@@ -101,11 +125,23 @@ function DetectionResults() {
 
       <div style={styles.itemsList}>
         {foodItems.map((item, index) => (
-          <FoodItemCard key={index} item={item} index={index} />
+          <div key={index} style={styles.itemWrapper}>
+            <div onClick={() => handleEditItem(index)} style={{ cursor: 'pointer', flex: 1 }}>
+              <FoodItemCard item={item} index={index} />
+            </div>
+            <RemoveItemButton 
+              onRemove={() => handleRemoveItem(index)} 
+              itemName={item.name}
+            />
+          </div>
         ))}
       </div>
 
       <TotalCalories items={foodItems} />
+
+      {showMealTypePicker && (
+        <MealTypePicker value={mealType} onChange={setMealType} />
+      )}
 
       <div style={styles.actions}>
         <a href="/camera" style={styles.link}>
@@ -118,7 +154,7 @@ function DetectionResults() {
           onClick={handleSave}
           disabled={saving}
         >
-          {saving ? '💾 Saving...' : '✓ Confirm & Save'}
+          {saving ? '💾 Saving...' : showMealTypePicker ? '✓ Save to Log' : '➡️ Continue'}
         </button>
       </div>
 
@@ -126,6 +162,14 @@ function DetectionResults() {
         <div style={styles.errorMessage}>
           ⚠️ Failed to save: {error}
         </div>
+      )}
+
+      {editingIndex !== null && (
+        <FoodItemEditor
+          item={foodItems[editingIndex]}
+          onSave={handleSaveEdit}
+          onCancel={handleCancelEdit}
+        />
       )}
     </div>
   );
@@ -168,6 +212,12 @@ const styles = {
   },
   itemsList: {
     marginBottom: '20px'
+  },
+  itemWrapper: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '10px',
+    marginBottom: '10px'
   },
   actions: {
     display: 'flex',

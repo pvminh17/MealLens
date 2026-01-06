@@ -13,31 +13,32 @@
     "format": "prettier --write \"src/**/*.{js,jsx,json,css}\""
   },
   "dependencies": {
+    "dexie": "^3.2.4",
+    "dexie-react-hooks": "^1.1.7",
+    "openai": "^4.24.1",
+    "pica": "^9.0.1",
+    "piexifjs": "^1.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.0",
-    "dexie": "^3.2.4",
-    "dexie-react-hooks": "^1.1.7",
-    "pica": "^9.0.1",
-    "piexifjs": "^1.0.6",
-    "openai": "^4.24.1",
     "workbox-window": "^7.0.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.2.1",
-    "vite": "^5.0.8",
-    "vite-plugin-pwa": "^0.17.4",
-    "typescript": "^5.3.3",
-    "vitest": "^1.1.0",
-    "@testing-library/react": "^14.1.2",
-    "@testing-library/jest-dom": "^6.1.5",
     "@playwright/test": "^1.40.1",
+    "@testing-library/jest-dom": "^6.1.5",
+    "@testing-library/react": "^14.1.2",
+    "@vitejs/plugin-react": "^4.2.1",
+    "@vitest/ui": "^1.1.0",
     "eslint": "^8.56.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
+    "fake-indexeddb": "^6.2.5",
+    "jsdom": "^23.0.1",
     "prettier": "^3.1.1",
-    "@vitest/ui": "^1.1.0",
-    "jsdom": "^23.0.1"
+    "typescript": "^5.3.3",
+    "vite": "^5.0.8",
+    "vite-plugin-pwa": "^0.17.4",
+    "vitest": "^1.1.0"
   }
 }
