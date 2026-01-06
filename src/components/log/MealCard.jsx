@@ -94,7 +94,7 @@ function MealCard({ meal, expanded, onToggleExpand }) {
 const styles = {
   card: {
     backgroundColor: 'white',
-    border: '1px solid #ddd',
+    border: '1px solid #E5E7EB',
     borderRadius: '10px',
     marginBottom: '15px',
     overflow: 'hidden',
@@ -119,11 +119,11 @@ const styles = {
   type: {
     fontSize: '16px',
     fontWeight: 'bold',
-    color: '#333'
+    color: '#1F2933'
   },
   time: {
     fontSize: '12px',
-    color: '#666',
+    color: '#6B7280',
     marginTop: '2px'
   },
   headerRight: {
@@ -134,21 +134,21 @@ const styles = {
   calories: {
     fontSize: '18px',
     fontWeight: 'bold',
-    color: '#4CAF50'
+    color: '#F39C12'
   },
   expandIcon: {
     fontSize: '14px',
-    color: '#999'
+    color: '#6B7280'
   },
   details: {
-    borderTop: '1px solid #f0f0f0',
+    borderTop: '1px solid #E5E7EB',
     padding: '15px',
-    backgroundColor: '#fafafa'
+    backgroundColor: '#FAFAFA'
   },
   loading: {
     textAlign: 'center',
     padding: '10px',
-    color: '#666',
+    color: '#6B7280',
     fontSize: '14px'
   },
   itemsList: {
@@ -158,15 +158,15 @@ const styles = {
     display: 'flex',
     justifyContent: 'space-between',
     padding: '8px 0',
-    borderBottom: '1px solid #eee'
+    borderBottom: '1px solid #E5E7EB'
   },
   itemName: {
     fontSize: '14px',
-    color: '#333'
+    color: '#1F2933'
   },
   itemDetails: {
     fontSize: '13px',
-    color: '#666'
+    color: '#6B7280'
   },
   actions: {
     display: 'flex',
@@ -176,7 +176,7 @@ const styles = {
   deleteButton: {
     padding: '8px 15px',
     fontSize: '13px',
-    backgroundColor: '#f44336',
+    backgroundColor: '#E74C3C',
     color: 'white',
     border: 'none',
     borderRadius: '5px',

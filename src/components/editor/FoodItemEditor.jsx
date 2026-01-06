@@ -153,7 +153,7 @@ const styles = {
     fontSize: '20px',
     fontWeight: 'bold',
     marginBottom: '20px',
-    color: '#333'
+    color: '#1F2933'
   },
   formGroup: {
     marginBottom: '20px'
@@ -163,13 +163,13 @@ const styles = {
     fontSize: '14px',
     fontWeight: 'bold',
     marginBottom: '8px',
-    color: '#555'
+    color: '#6B7280'
   },
   input: {
     width: '100%',
     padding: '10px',
     fontSize: '16px',
-    border: '1px solid #ddd',
+    border: '1px solid #E5E7EB',
     borderRadius: '5px',
     boxSizing: 'border-box'
   },
@@ -186,26 +186,26 @@ const styles = {
     width: '80px',
     padding: '8px',
     fontSize: '16px',
-    border: '1px solid #ddd',
+    border: '1px solid #E5E7EB',
     borderRadius: '5px',
     textAlign: 'center'
   },
   unit: {
     fontSize: '14px',
-    color: '#666',
+    color: '#6B7280',
     minWidth: '15px'
   },
   info: {
-    backgroundColor: '#e3f2fd',
+    backgroundColor: '#FEF3E2',
     padding: '10px',
     borderRadius: '5px',
     fontSize: '13px',
-    color: '#1976d2',
+    color: '#B87503',
     marginBottom: '20px'
   },
   error: {
     display: 'block',
-    color: '#d32f2f',
+    color: '#E74C3C',
     fontSize: '12px',
     marginTop: '5px'
   },
@@ -218,7 +218,7 @@ const styles = {
     flex: 1,
     padding: '12px',
     fontSize: '16px',
-    backgroundColor: '#9e9e9e',
+    backgroundColor: '#6B7280',
     color: 'white',
     border: 'none',
     borderRadius: '5px',
@@ -229,7 +229,7 @@ const styles = {
     flex: 1,
     padding: '12px',
     fontSize: '16px',
-    backgroundColor: '#4CAF50',
+    backgroundColor: '#2ECC71',
     color: 'white',
     border: 'none',
     borderRadius: '5px',

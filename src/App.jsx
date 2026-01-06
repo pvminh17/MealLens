@@ -11,21 +11,21 @@ import MealLogList from './components/log/MealLogList.jsx';
 // Home page component
 const HomePage = () => (
   <div style={{ padding: '20px', textAlign: 'center', marginTop: '100px' }}>
-    <h1 style={{ color: '#4CAF50', fontSize: '48px' }}>MealLens</h1>
-    <p style={{ fontSize: '18px', color: '#666', marginBottom: '30px' }}>AI-powered calorie tracking from food photos</p>
+    <h1 style={{ color: '#2ECC71', fontSize: '48px' }}>MealLens</h1>
+    <p style={{ fontSize: '18px', color: '#6B7280', marginBottom: '30px' }}>AI-powered calorie tracking from food photos</p>
     <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
       <a href="/camera" style={{ textDecoration: 'none' }}>
-        <button style={{ padding: '15px 40px', fontSize: '18px', backgroundColor: '#4CAF50', color: 'white', border: 'none', borderRadius: '50px', cursor: 'pointer', fontWeight: 'bold' }}>
+        <button style={{ padding: '15px 40px', fontSize: '18px', backgroundColor: '#2ECC71', color: 'white', border: 'none', borderRadius: '50px', cursor: 'pointer', fontWeight: 'bold' }}>
           📸 Take Photo
         </button>
       </a>
       <a href="/log" style={{ textDecoration: 'none' }}>
-        <button style={{ padding: '15px 40px', fontSize: '18px', backgroundColor: '#FF9800', color: 'white', border: 'none', borderRadius: '50px', cursor: 'pointer', fontWeight: 'bold' }}>
+        <button style={{ padding: '15px 40px', fontSize: '18px', backgroundColor: '#F39C12', color: 'white', border: 'none', borderRadius: '50px', cursor: 'pointer', fontWeight: 'bold' }}>
           📋 View Log
         </button>
       </a>
       <a href="/settings" style={{ textDecoration: 'none' }}>
-        <button style={{ padding: '15px 40px', fontSize: '18px', backgroundColor: '#2196F3', color: 'white', border: 'none', borderRadius: '50px', cursor: 'pointer', fontWeight: 'bold' }}>
+        <button style={{ padding: '15px 40px', fontSize: '18px', backgroundColor: '#6B7280', color: 'white', border: 'none', borderRadius: '50px', cursor: 'pointer', fontWeight: 'bold' }}>
           ⚙️ Settings
         </button>
       </a>

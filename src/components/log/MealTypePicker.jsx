@@ -47,7 +47,7 @@ const styles = {
     fontSize: '14px',
     fontWeight: 'bold',
     marginBottom: '10px',
-    color: '#555'
+    color: '#6B7280'
   },
   options: {
     display: 'grid',
@@ -57,18 +57,18 @@ const styles = {
   option: {
     padding: '12px',
     fontSize: '14px',
-    backgroundColor: '#f5f5f5',
-    color: '#333',
-    border: '2px solid #ddd',
+    backgroundColor: '#FAFAFA',
+    color: '#1F2933',
+    border: '2px solid #E5E7EB',
     borderRadius: '8px',
     cursor: 'pointer',
     fontWeight: '500',
     transition: 'all 0.2s'
   },
   optionSelected: {
-    backgroundColor: '#4CAF50',
+    backgroundColor: '#2ECC71',
     color: 'white',
-    borderColor: '#4CAF50',
+    borderColor: '#2ECC71',
     fontWeight: 'bold'
   }
 };

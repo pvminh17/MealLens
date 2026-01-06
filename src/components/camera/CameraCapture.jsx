@@ -76,7 +76,7 @@ const styles = {
     bottom: '40px',
     padding: '15px 30px',
     fontSize: '18px',
-    backgroundColor: '#4CAF50',
+    backgroundColor: '#2ECC71',
     color: 'white',
     border: 'none',
     borderRadius: '50px',
@@ -87,7 +87,7 @@ const styles = {
     position: 'absolute',
     top: '20px',
     padding: '10px 20px',
-    backgroundColor: '#f44336',
+    backgroundColor: '#E74C3C',
     color: 'white',
     borderRadius: '5px'
   }

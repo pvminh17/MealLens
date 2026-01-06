@@ -179,8 +179,8 @@ function Settings() {
         <div
           style={{
             ...styles.message,
-            backgroundColor: message.type === 'success' ? '#d4edda' : '#f8d7da',
-            color: message.type === 'success' ? '#155724' : '#721c24'
+            backgroundColor: message.type === 'success' ? '#D5F5E3' : '#FADBD8',
+            color: message.type === 'success' ? '#1E8449' : '#E74C3C'
           }}
         >
           {message.text}
@@ -205,7 +205,7 @@ const styles = {
   },
   backButton: {
     padding: '8px 15px',
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#FAFAFA',
     border: 'none',
     borderRadius: '5px',
     cursor: 'pointer',
@@ -213,7 +213,7 @@ const styles = {
   },
   title: {
     fontSize: '28px',
-    color: '#333',
+    color: '#1F2933',
     margin: 0
   },
   section: {
@@ -225,12 +225,12 @@ const styles = {
   },
   sectionTitle: {
     fontSize: '20px',
-    color: '#333',
+    color: '#1F2933',
     marginTop: 0,
     marginBottom: '10px'
   },
   description: {
-    color: '#666',
+    color: '#6B7280',
     fontSize: '14px',
     marginBottom: '15px'
   },
@@ -243,14 +243,14 @@ const styles = {
     flex: 1,
     padding: '12px',
     fontSize: '16px',
-    border: '1px solid #ddd',
+    border: '1px solid #E5E7EB',
     borderRadius: '5px',
     fontFamily: 'monospace'
   },
   toggleButton: {
     padding: '12px 20px',
-    backgroundColor: '#f5f5f5',
-    border: '1px solid #ddd',
+    backgroundColor: '#FAFAFA',
+    border: '1px solid #E5E7EB',
     borderRadius: '5px',
     cursor: 'pointer',
     fontSize: '14px'
@@ -264,7 +264,7 @@ const styles = {
     flex: 1,
     padding: '12px',
     fontSize: '16px',
-    backgroundColor: '#4CAF50',
+    backgroundColor: '#2ECC71',
     color: 'white',
     border: 'none',
     borderRadius: '5px',
@@ -274,7 +274,7 @@ const styles = {
   dangerButton: {
     padding: '12px 20px',
     fontSize: '16px',
-    backgroundColor: '#f44336',
+    backgroundColor: '#E74C3C',
     color: 'white',
     border: 'none',
     borderRadius: '5px',
@@ -283,7 +283,7 @@ const styles = {
     width: '100%'
   },
   confirmBox: {
-    backgroundColor: '#fff3cd',
+    backgroundColor: '#FEF3E2',
     padding: '15px',
     borderRadius: '5px',
     marginTop: '10px'
@@ -296,7 +296,7 @@ const styles = {
   confirmYes: {
     flex: 1,
     padding: '8px',
-    backgroundColor: '#f44336',
+    backgroundColor: '#E74C3C',
     color: 'white',
     border: 'none',
     borderRadius: '5px',
@@ -305,7 +305,7 @@ const styles = {
   confirmNo: {
     flex: 1,
     padding: '8px',
-    backgroundColor: '#666',
+    backgroundColor: '#6B7280',
     color: 'white',
     border: 'none',
     borderRadius: '5px',
@@ -314,10 +314,10 @@ const styles = {
   helpText: {
     marginTop: '15px',
     fontSize: '14px',
-    color: '#666'
+    color: '#6B7280'
   },
   link: {
-    color: '#4CAF50',
+    color: '#2ECC71',
     textDecoration: 'none'
   },
   privacyList: {
@@ -327,7 +327,7 @@ const styles = {
   },
   warningText: {
     fontSize: '14px',
-    color: '#666',
+    color: '#6B7280',
     marginTop: '10px'
   },
   message: {

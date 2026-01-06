@@ -188,7 +188,7 @@ const styles = {
   },
   title: {
     fontSize: '24px',
-    color: '#333',
+    color: '#1F2933',
     marginBottom: '15px'
   },
   thumbnail: {
@@ -202,9 +202,9 @@ const styles = {
     padding: '60px 20px'
   },
   warning: {
-    backgroundColor: '#fff3cd',
-    border: '1px solid #ffc107',
-    color: '#856404',
+    backgroundColor: '#FEF3E2',
+    border: '1px solid #F39C12',
+    color: '#B87503',
     padding: '12px',
     borderRadius: '5px',
     marginBottom: '20px',
@@ -232,7 +232,7 @@ const styles = {
     flex: 1,
     padding: '15px',
     fontSize: '16px',
-    backgroundColor: '#4CAF50',
+    backgroundColor: '#2ECC71',
     color: 'white',
     border: 'none',
     borderRadius: '10px',
@@ -243,15 +243,15 @@ const styles = {
     width: '100%',
     padding: '15px',
     fontSize: '16px',
-    backgroundColor: '#666',
+    backgroundColor: '#6B7280',
     color: 'white',
     border: 'none',
     borderRadius: '10px',
   },
   errorMessage: {
-    backgroundColor: '#f8d7da',
-    border: '1px solid #f5c6cb',
-    color: '#721c24',
+    backgroundColor: '#FEE',
+    border: '1px solid #E74C3C',
+    color: '#C0392B',
     padding: '12px',
     borderRadius: '5px',
     marginTop: '15px',
@@ -262,7 +262,7 @@ const styles = {
   retryButton: {
     padding: '15px 30px',
     fontSize: '16px',
-    backgroundColor: '#4CAF50',
+    backgroundColor: '#2ECC71',
     color: 'white',
     border: 'none',
     borderRadius: '10px',

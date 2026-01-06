@@ -60,16 +60,16 @@ function DailySummary({ meals, date }) {
 const styles = {
   container: {
     backgroundColor: 'white',
-    border: '2px solid #4CAF50',
+    border: '2px solid #2ECC71',
     borderRadius: '10px',
     padding: '20px',
     marginBottom: '25px',
-    boxShadow: '0 2px 6px rgba(76, 175, 80, 0.1)'
+    boxShadow: '0 2px 6px rgba(46, 204, 113, 0.1)'
   },
   dateHeader: {
     fontSize: '18px',
     fontWeight: 'bold',
-    color: '#4CAF50',
+    color: '#2ECC71',
     marginBottom: '15px',
     textAlign: 'center'
   },
@@ -85,19 +85,19 @@ const styles = {
   statValue: {
     fontSize: '32px',
     fontWeight: 'bold',
-    color: '#333',
+    color: '#1F2933',
     marginBottom: '5px'
   },
   statLabel: {
     fontSize: '13px',
-    color: '#666',
+    color: '#6B7280',
     textTransform: 'uppercase',
     letterSpacing: '0.5px'
   },
   divider: {
     width: '1px',
     height: '60px',
-    backgroundColor: '#e0e0e0'
+    backgroundColor: '#E5E7EB'
   },
   emptyState: {
     textAlign: 'center',
@@ -105,7 +105,7 @@ const styles = {
   },
   hint: {
     fontSize: '13px',
-    color: '#999',
+    color: '#6B7280',
     marginTop: '5px'
   }
 };

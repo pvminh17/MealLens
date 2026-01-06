@@ -125,7 +125,7 @@ const styles = {
   container: {
     width: '100%',
     minHeight: '100vh',
-    backgroundColor: '#f5f5f5'
+    backgroundColor: '#FAFAFA'
   },
   selectMode: {
     display: 'flex',
@@ -137,13 +137,13 @@ const styles = {
   },
   title: {
     fontSize: '36px',
-    color: '#4CAF50',
+    color: '#2ECC71',
     marginBottom: '10px',
     fontWeight: 'bold'
   },
   subtitle: {
     fontSize: '18px',
-    color: '#666',
+    color: '#6B7280',
     marginBottom: '40px'
   },
   buttonGroup: {
@@ -155,7 +155,7 @@ const styles = {
   primaryButton: {
     padding: '15px 40px',
     fontSize: '18px',
-    backgroundColor: '#4CAF50',
+    backgroundColor: '#2ECC71',
     color: 'white',
     border: 'none',
     borderRadius: '50px',
@@ -165,8 +165,8 @@ const styles = {
   error: {
     marginTop: '20px',
     padding: '10px 20px',
-    backgroundColor: '#ffebee',
-    color: '#c62828',
+    backgroundColor: '#FEE',
+    color: '#E74C3C',
     borderRadius: '5px'
   },
   errorOverlay: {
@@ -191,12 +191,12 @@ const styles = {
   errorText: {
     fontSize: '16px',
     marginBottom: '20px',
-    color: '#333'
+    color: '#1F2933'
   },
   errorButton: {
     padding: '10px 30px',
     fontSize: '16px',
-    backgroundColor: '#4CAF50',
+    backgroundColor: '#2ECC71',
     color: 'white',
     border: 'none',
     borderRadius: '5px',

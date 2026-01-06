@@ -8,9 +8,9 @@ function FoodItemCard({ item, index }) {
   const { name, grams, calories, confidence } = item;
 
   const confidenceColors = {
-    high: '#4CAF50',
-    medium: '#FF9800',
-    low: '#f44336'
+    high: '#2ECC71',
+    medium: '#F39C12',
+    low: '#E74C3C'
   };
 
   const confidenceLabels = {
@@ -63,7 +63,7 @@ const styles = {
   },
   name: {
     fontSize: '18px',
-    color: '#333',
+    color: '#1F2933',
     margin: 0
   },
   confidenceBadge: {
@@ -83,12 +83,12 @@ const styles = {
   },
   label: {
     fontSize: '12px',
-    color: '#999',
+    color: '#6B7280',
     marginBottom: '4px'
   },
   value: {
     fontSize: '16px',
-    color: '#333',
+    color: '#1F2933',
     fontWeight: '500'
   }
 };

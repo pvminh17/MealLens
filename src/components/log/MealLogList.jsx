@@ -87,7 +87,7 @@ const styles = {
   title: {
     fontSize: '28px',
     fontWeight: 'bold',
-    color: '#333',
+    color: '#1F2933',
     marginBottom: '20px',
     textAlign: 'center'
   },
@@ -97,31 +97,31 @@ const styles = {
     gap: '10px',
     marginBottom: '20px',
     padding: '10px',
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#FAFAFA',
     borderRadius: '8px'
   },
   dateLabel: {
     fontSize: '14px',
     fontWeight: 'bold',
-    color: '#555'
+    color: '#6B7280'
   },
   dateInput: {
     flex: 1,
     padding: '8px',
     fontSize: '14px',
-    border: '1px solid #ddd',
+    border: '1px solid #E5E7EB',
     borderRadius: '5px'
   },
   loading: {
     textAlign: 'center',
     padding: '40px',
-    color: '#666',
+    color: '#6B7280',
     fontSize: '16px'
   },
   emptyState: {
     textAlign: 'center',
     padding: '60px 20px',
-    color: '#666'
+    color: '#6B7280'
   },
   mealsList: {
     marginBottom: '20px'
@@ -139,7 +139,7 @@ const styles = {
     width: '100%',
     padding: '15px',
     fontSize: '16px',
-    backgroundColor: '#4CAF50',
+    backgroundColor: '#2ECC71',
     color: 'white',
     border: 'none',
     borderRadius: '10px',
@@ -150,7 +150,7 @@ const styles = {
     width: '100%',
     padding: '15px',
     fontSize: '16px',
-    backgroundColor: '#2196F3',
+    backgroundColor: '#6B7280',
     color: 'white',
     border: 'none',
     borderRadius: '10px',

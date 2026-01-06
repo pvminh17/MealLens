@@ -64,7 +64,7 @@ const styles = {
   uploadButton: {
     padding: '15px 30px',
     fontSize: '18px',
-    backgroundColor: '#2196F3',
+    backgroundColor: '#6B7280',
     color: 'white',
     border: 'none',
     borderRadius: '50px',

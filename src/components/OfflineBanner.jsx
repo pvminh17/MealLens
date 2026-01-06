@@ -17,7 +17,7 @@ function OfflineBanner() {
         top: 0,
         left: 0,
         right: 0,
-        backgroundColor: '#FF9800',
+        backgroundColor: '#F39C12',
         color: 'white',
         padding: '10px',
         textAlign: 'center',

@@ -58,7 +58,7 @@ const styles = {
   retakeButton: {
     padding: '15px 30px',
     fontSize: '16px',
-    backgroundColor: '#666',
+    backgroundColor: '#6B7280',
     color: 'white',
     border: 'none',
     borderRadius: '50px',
@@ -68,7 +68,7 @@ const styles = {
   confirmButton: {
     padding: '15px 30px',
     fontSize: '16px',
-    backgroundColor: '#4CAF50',
+    backgroundColor: '#2ECC71',
     color: 'white',
     border: 'none',
     borderRadius: '50px',

@@ -59,13 +59,13 @@ const styles = {
   },
   confirmText: {
     fontSize: '13px',
-    color: '#d32f2f',
+    color: '#E74C3C',
     fontWeight: 'bold'
   },
   confirmButton: {
     padding: '5px 15px',
     fontSize: '12px',
-    backgroundColor: '#d32f2f',
+    backgroundColor: '#E74C3C',
     color: 'white',
     border: 'none',
     borderRadius: '3px',
@@ -75,7 +75,7 @@ const styles = {
   cancelButton: {
     padding: '5px 15px',
     fontSize: '12px',
-    backgroundColor: '#9e9e9e',
+    backgroundColor: '#6B7280',
     color: 'white',
     border: 'none',
     borderRadius: '3px',

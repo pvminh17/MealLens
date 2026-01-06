@@ -17,7 +17,7 @@ function TotalCalories({ items }) {
 
 const styles = {
   container: {
-    backgroundColor: '#4CAF50',
+    backgroundColor: '#F39C12',
     color: 'white',
     padding: '20px',
     borderRadius: '10px',
