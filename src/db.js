@@ -14,6 +14,14 @@ class MealLensDB extends Dexie {
       meals: '++id, timestamp, date',      // Auto-increment id, indexed timestamp and date
       foodItems: '++id, mealId'            // Auto-increment id, foreign key mealId
     });
+    
+    // Schema version 2 - Add version checking support
+    this.version(2).stores({
+      settings: 'key',
+      meals: '++id, timestamp, date',
+      foodItems: '++id, mealId',
+      versionState: '&key, lastDismissedAt, lastCheckAt'  // Version check state
+    });
   }
 }
 
@@ -24,3 +32,4 @@ export const db = new MealLensDB();
 export const settingsTable = db.table('settings');
 export const mealsTable = db.table('meals');
 export const foodItemsTable = db.table('foodItems');
+export const versionStateTable = db.table('versionState');
