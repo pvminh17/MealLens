@@ -11,6 +11,7 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
+      scope: '/MealLens/',
       includeAssets: ['icons/*.png'],
       manifest: {
         name: 'MealLens - Calorie Tracker',
