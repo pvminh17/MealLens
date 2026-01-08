@@ -41,10 +41,6 @@ coverage/
 *.lcov
 .nyc_output
 
-# PWA
-sw.js
-workbox-*.js
-
 # Temporary files
 *.tmp
 .cache/
