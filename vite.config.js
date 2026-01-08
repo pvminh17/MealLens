@@ -21,12 +21,12 @@ export default defineConfig({
         display: 'standalone',
         icons: [
           {
-            src: 'icons/192x192.png',
+            src: '/MealLens/icons/192x192.png',
             sizes: '192x192',
             type: 'image/png'
           },
           {
-            src: 'icons/512x512.png',
+            src: '/MealLens/icons/512x512.png',
             sizes: '512x512',
             type: 'image/png'
           }
