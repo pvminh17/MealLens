@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAppContext } from '../../context/AppContext.jsx';
 import FoodItemCard from './FoodItemCard.jsx';
 import TotalCalories from './TotalCalories.jsx';
@@ -144,11 +144,11 @@ function DetectionResults() {
       )}
 
       <div style={styles.actions}>
-        <a href="/camera" style={styles.link}>
+        <Link to="/camera" style={styles.link}>
           <button style={styles.secondaryButton} disabled={saving}>
             🔄 Retry
           </button>
-        </a>
+        </Link>
         <button 
           style={styles.primaryButton} 
           onClick={handleSave}

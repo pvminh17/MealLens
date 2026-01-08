@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { getMealsByDate } from '../../services/storageService.js';
 import MealCard from './MealCard.jsx';
@@ -48,9 +49,9 @@ function MealLogList() {
       ) : meals.length === 0 ? (
         <div style={styles.emptyState}>
           <p>📝 No meals logged for {selectedDate}</p>
-          <a href="/camera" style={styles.link}>
+          <Link to="/camera" style={styles.link}>
             <button style={styles.addButton}>➕ Add First Meal</button>
-          </a>
+          </Link>
         </div>
       ) : (
         <div style={styles.mealsList}>
@@ -66,12 +67,12 @@ function MealLogList() {
       )}
 
       <div style={styles.footer}>
-        <a href="/camera" style={styles.link}>
+        <Link to="/camera" style={styles.link}>
           <button style={styles.addButton}>➕ Add Meal</button>
-        </a>
-        <a href="/" style={styles.link}>
+        </Link>
+        <Link to="/" style={styles.link}>
           <button style={styles.homeButton}>🏠 Home</button>
-        </a>
+        </Link>
       </div>
     </div>
   );
