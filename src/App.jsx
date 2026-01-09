@@ -63,7 +63,7 @@ function App() {
   return (
     <ErrorBoundary>
       <AppProvider>
-        <BrowserRouter basename={"/MealLens"}>
+        <BrowserRouter >
           {/* T024: Conditional UpdateBanner rendering */}
           {updateInfo && (
             <UpdateBanner

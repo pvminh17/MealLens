@@ -3,15 +3,12 @@ import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
-  base: '/MealLens/',
   build: {
-    outDir: 'docs'
   },
   plugins: [
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      scope: '/MealLens/',
       includeAssets: ['icons/*.png'],
       manifest: {
         name: 'MealLens - Calorie Tracker',
@@ -22,12 +19,12 @@ export default defineConfig({
         display: 'standalone',
         icons: [
           {
-            src: '/MealLens/icons/192x192.png',
+            src: '/icons/192x192.png',
             sizes: '192x192',
             type: 'image/png'
           },
           {
-            src: '/MealLens/icons/512x512.png',
+            src: '/icons/512x512.png',
             sizes: '512x512',
             type: 'image/png'
           }

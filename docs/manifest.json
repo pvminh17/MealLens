@@ -2,7 +2,6 @@
   "name": "MealLens - Calorie Tracker",
   "short_name": "MealLens",
   "description": "AI-powered calorie tracking from food photos",
-  "start_url": "/MealLens/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#4CAF50",
